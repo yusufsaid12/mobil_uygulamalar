@@ -9,4 +9,4 @@ Bu dizinde derste yazdıklarımızı bulabilirsiniz.
 Bu dizinde ödevleri yapmanıza yardımcı kodlar bulabilirsiniz.
 
 ## odev
-Bu dizinde herkesin ismine ayrı ayrı atanmış ödev dosyalarını bulabilirsiniz.
+Bu dizinde herkesin numarasına ayrı ayrı atanmış ödev dosyalarını bulabilirsiniz.
