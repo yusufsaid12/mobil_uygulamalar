@@ -1,10 +1,10 @@
-###Ödev 1
+### Ödev 1
 
-##Yapılması gereken:
+## Yapılması gereken:
 <dosya_adi>.png dosyasında görülen uygulama ekranının hazırlanıp, 
 main.dart dosyasının zip haline getirilip, 
 EBA'da "Mobil Uygulamalar ödev 1" alanına yüklenmesi.
-##Açıklama:
+## Açıklama:
 Dizinde <dosya_adi>.png şeklinde bir dosya var.
 Bu <dosya_adi> aslinda sizin kullanmanız gereken rengi de ifade ediyor.
 Bu dosya adına göre örneğin dosya adı, greenGrey.png ise,
