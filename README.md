@@ -1,9 +1,9 @@
-### mobil_uygulamalar
+# mobil_uygulamalar
 
 Bu depoda 3 adet dizin var, 
-# derste_yapilanlar, 
-# odev
-# sinav_hazirlik
+### derste_yapilanlar, 
+### odev
+### sinav_hazirlik
 
 ## derste_yapilanlar
 Bu dizinde derste yazdıklarımızı bulabilirsiniz.
