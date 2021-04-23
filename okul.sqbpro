@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/sql lite/okul.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3697"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,4:mainders"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE &quot;ders&quot; (
+	&quot;id&quot;	numeric(10) NOT NULL,
+	&quot;ders_ad&quot;	varchar(50),
+	&quot;ekleyen_kullanici_id&quot;	NUMERIC(10) NOT NULL,
+	&quot;ekleme_tarihi&quot;	datetime,
+	&quot;guncelleyen_kullanici_id&quot;	NUMERIC(10),
+	&quot;guncelleme_tarihi&quot;	datetime,
+	&quot;version&quot;	NUMERIC(10) NOT NULL,
+	CONSTRAINT &quot;ders_kul_ekleyen_fk&quot; FOREIGN KEY(&quot;ekleyen_kullanici_id&quot;) REFERENCES &quot;kullanici&quot;(&quot;id&quot;),
+	CONSTRAINT &quot;ders_kul_guncelleyen_fk&quot; FOREIGN KEY(&quot;guncelleyen_kullanici_id&quot;) REFERENCES &quot;kullanici&quot;(&quot;id&quot;),
+	CONSTRAINT &quot;ders_id&quot; PRIMARY KEY(&quot;id&quot;)
+);
+
+CREATE TABLE &quot;kullanici&quot; (
+	&quot;id&quot;	numeric(10) NOT NULL,
+	&quot;kullanici_adi&quot;	varchar(50) NOT NULL,
+	&quot;sifre&quot;	varchar(50) NOT NULL,
+	&quot;adi&quot;	varchar(50),
+	&quot;soyadi&quot;	varchar(50),
+	&quot;email&quot;	varchar(100),
+	&quot;ekleyen_kullanici_id&quot;	numeric(10),
+	&quot;ekleme_tarihi&quot;	timestamp without time zone,
+	&quot;guncelleyen_kullanici_id&quot;	numeric(10),
+	&quot;guncelleme_tarihi&quot;	timestamp without time zone,
+	&quot;version&quot;	numeric(10) NOT NULL,
+	CONSTRAINT &quot;kul_pk&quot; PRIMARY KEY(&quot;id&quot;),
+	CONSTRAINT &quot;kul_kullanici_adi_uk&quot; UNIQUE(&quot;kullanici_adi&quot;),
+	CONSTRAINT &quot;kul_kul_ekleyen_fk&quot; FOREIGN KEY(&quot;ekleyen_kullanici_id&quot;) REFERENCES &quot;kullanici&quot;(&quot;id&quot;),
+	CONSTRAINT &quot;kul_kul_guncelleyen_fk&quot; FOREIGN KEY(&quot;guncelleyen_kullanici_id&quot;) REFERENCES &quot;kullanici&quot;(&quot;id&quot;)
+);
+
+CREATE TABLE &quot;sinif&quot; (
+	&quot;id&quot;	numeric(10) NOT NULL,
+	&quot;sinif_no&quot;	numeric(3) NOT NULL,
+	&quot;ekleyen_kullanici_id&quot;	numeric(10) NOT NULL,
+	&quot;ekleme_tarihi&quot;	timestamp without time zone NOT NULL,
+	&quot;guncelleyen_kullanici_id&quot;	numeric(10),
+	&quot;guncelleme_tarihi&quot;	timestamp without time zone,
+	&quot;version&quot;	numeric(10) NOT NULL,
+	CONSTRAINT &quot;snf_pk&quot; PRIMARY KEY(&quot;id&quot;),
+	CONSTRAINT &quot;snf_kul_ekleyen_fk&quot; FOREIGN KEY(&quot;ekleyen_kullanici_id&quot;) REFERENCES &quot;kullanici&quot;(&quot;id&quot;),
+	CONSTRAINT &quot;snf_kul_guncelleyen_fk&quot; FOREIGN KEY(&quot;guncelleyen_kullanici_id&quot;) REFERENCES &quot;kullanici&quot;(&quot;id&quot;),
+	CONSTRAINT &quot;sinif_no_uk&quot; UNIQUE(&quot;sinif_no&quot;)
+);
+
+CREATE TABLE &quot;sube&quot; (
+	&quot;id&quot;	numeric(10) NOT NULL,
+	&quot;sinif_id&quot;	numeric(10) NOT NULL,
+	&quot;adi&quot;	varchar(50) NOT NULL,
+	&quot;ekleyen_kullanici_id&quot;	numeric(10) NOT NULL,
+	&quot;ekleme_tarihi&quot;	timestamp without time zone NOT NULL,
+	&quot;guncelleyen_kullanici_id&quot;	numeric(10),
+	&quot;guncelleme_tarihi&quot;	timestamp without time zone,
+	&quot;version&quot;	numeric(10) NOT NULL,
+	CONSTRAINT &quot;sb_pk&quot; PRIMARY KEY(&quot;id&quot;),
+	CONSTRAINT &quot;sb_snf_sinif_fk&quot; FOREIGN KEY(&quot;sinif_id&quot;) REFERENCES &quot;sinif&quot;(&quot;id&quot;),
+	CONSTRAINT &quot;sb_kul_ekleyen_fk&quot; FOREIGN KEY(&quot;ekleyen_kullanici_id&quot;) REFERENCES &quot;kullanici&quot;(&quot;id&quot;),
+	CONSTRAINT &quot;sb_kul_guncelleyen_fk&quot; FOREIGN KEY(&quot;guncelleyen_kullanici_id&quot;) REFERENCES &quot;kullanici&quot;(&quot;id&quot;),
+	CONSTRAINT &quot;sb_sinif_adi_uk&quot; UNIQUE(&quot;sinif_id&quot;,&quot;adi&quot;)
+);
+
+
+alter table sube alter COLUMN ekleme_tarihi typeof datetime</sql><current_tab id="0"/></tab_sql></sqlb_project>
