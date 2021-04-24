@@ -1,0 +1,21 @@
+SQLITE ile bir tablo hazırlamak.
+Bu tablonun adı "esyalar" olsun.
+Bu tablonun 3 adet sütunu olsun.
+tur, ad, yer diye sütunları olsun.
+tur sütununun tipi varchar(60) olsun.
+ad sütununun tipi varchar(60) olsun.
+yer sütununun tipi varchar(60) olsun.
+
+esyalar tablosu
+
+tur        ad             yer
+=====      ====           ======
+hediyelik  gri çerçeve    raf
+hediyelik  porselen kutu  çalışma masası
+kitap	   savaş ve barış kitaplık
+
+create table esyalar (
+	tur  varchar(60) not null,
+	ad   varchar(60) not null,
+	yer  varchar(60) not null
+)
