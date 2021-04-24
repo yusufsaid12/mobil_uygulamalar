@@ -15,4 +15,4 @@ Bu dizinin için `README.md` ve `<dosya_adi>.png` adlı iki adet dosya bulunuyor
 
 ## proje_hazirlik
 Proje hazirlamak için yapılanlar bulunuyor. 
--Şimdilik SQL ve DB dosyaları ve bir adet flutter projesi `sqflite_insert_interface` bulunuyor.
+Şimdilik SQL ve DB dosyaları ve bir adet flutter projesi `sqflite_insert_interface` bulunuyor.
